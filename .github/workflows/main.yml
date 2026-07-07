@@ -42,7 +42,7 @@ jobs:
           & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\setup.iss
 
       - name: Upload Installer
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: BillingSetup_Installer
           path: installer\output\BillingSetup.exe
@@ -51,7 +51,7 @@ jobs:
         run: Compress-Archive -Path build\windows\x64\runner\Release\* -DestinationPath BillingSoftware_Windows_Portable.zip
 
       - name: Upload Portable Build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: BillingSoftware_Windows_Portable
           path: BillingSoftware_Windows_Portable.zip
